@@ -1,0 +1,88 @@
+import tensorflow as tf
+from tensorflow import keras
+import numpy as np
+import matplotlib.pyplot as plt
+
+#import training data
+
+fashion_mnist = keras.datasets.fashion_mnist
+(train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
+train_images.shape
+train_images[0,23,23]
+train_labels[:10]
+#define classification arrays
+
+class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
+               'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
+
+train_images = train_images / 255.0
+test_images = test_images / 255.0
+
+model = keras.Sequential([
+	keras.layers.Flatten(input_shape=(28, 28))
+	keras.layers.Dense(128,  activation='relu')
+    keras.layers.Dense(10, activation='softmax')
+])
+
+
+
+
+
+
+
+"""
+import tensorflow as tf
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.utils import to_categorical
+
+np.random.seed(10)
+df = pd.read_csv("E:/Python-folder/Pythontest/diabetes.csv")
+dataset = df.values
+np.random.shuffle(dataset)
+X = dataset [ : , 0:8]
+Y = dataset [ : , 8]
+Y = to_categorical(Y)
+model = Sequential()
+
+model.add(Dense(10,input_shape=(8, ),
+		kernel_initializer="random_uniform",
+		bias_initializer="ones",
+		activation = "relu")
+	  )
+model.add(Dense(6,kernel_initializer="random_uniform",
+		bias_initializer="ones",
+		activation="relu")
+	  )
+model.add(Dense(2,kernel_initializer="random_uniform",
+		bias_initializer="ones",
+		activation="softmax")
+	  )
+
+model.summary()
+model.compile(loss="binary_crossentropy",optimizer="adam",metrics=["accuracy"])
+#loss , accuracy = model.evaluate(X , Y)
+X -= X.mean(axis=0)
+X /= X.std(axis=0)
+X_train , Y_train = X[:690] , Y[:690]
+X_test , Y_test = X[690:] , Y[690 :]
+history = model.fit(X_train, Y_train, validation_data=(X_test, Y_test), epochs=150, batch_size=10)
+#model.fit(X , Y ,epochs=150,batch_size=10,verbose=0)
+loss , accuracy = model.evaluate(X_train,Y_train)
+print("訓練資料的準確度 = {:.2f}".format(accuracy))
+loss , accuracy = model.evaluate(X_test ,Y_test)
+print("測試資料的準確度 = {:.2f}".format(accuracy))
+loss = history.history["loss"]
+epochs = range(1, len(loss)+1)
+val_loss = history.history["val_loss"]
+plt.plot(epochs, loss, "bo", label="Validation Loss")
+plt.plot(epochs, val_loss, "r", label="Validation Loss")
+plt.title("Training and Validation Loss")
+plt.xlabel("Epochs")
+plt.ylabel("Loss")
+plt.legend()
+plt.show()
+"""
