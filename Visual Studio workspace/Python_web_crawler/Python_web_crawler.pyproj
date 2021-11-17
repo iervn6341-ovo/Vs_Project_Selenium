@@ -21,10 +21,14 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="import_.py" />
+    <Compile Include="function_.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="information.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Python_web_crawler.py" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="config.ini" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
