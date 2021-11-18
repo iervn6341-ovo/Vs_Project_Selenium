@@ -28,7 +28,7 @@ while(1) :
 		collect_information(driver, case_num)
 
 		#印出資訊
-		from information import *
+		from information_ import *
 		print("\n")
 		print(f"停水日期: {start_water_cut_date}")
 		print(f"停水時間: {start_water_cut_time}")
