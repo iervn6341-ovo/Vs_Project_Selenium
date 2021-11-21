@@ -5,11 +5,11 @@
 Windows:  
     python ./line_api.py  
     ./ngrok http 5000  
-linux:
-    sudo apt install ngrok
-    [Terminal 1]:
-        python3 line_api.py
-    [Terminal 2]:
-        ngrok http 5000
-最後請在line-devoloper修改Webhook URL
-例 :[url]/callback
+linux:  
+    sudo apt install ngrok  
+    [Terminal 1]:  
+        python3 line_api.py  
+    [Terminal 2]:  
+        ngrok http 5000  
+最後請在line-devoloper修改Webhook URL  
+例 :[url]/callback  
