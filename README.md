@@ -13,3 +13,6 @@ linux:
         ngrok http 5000  
 最後請在line-devoloper修改Webhook URL  
 例 :[url]/callback  
+由於使用selenium作為爬蟲模組  
+所以必要條件為有GUI介面  
+一次的查看所需時間較長,請耐心等候  
