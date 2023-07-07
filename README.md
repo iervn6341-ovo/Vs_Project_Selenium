@@ -18,4 +18,4 @@ linux:
 一次的查看所需時間較長,請耐心等候  
   
   
-token : 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  
+git push token : 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 
