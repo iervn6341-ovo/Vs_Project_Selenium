@@ -16,6 +16,3 @@ linux:
 由於使用selenium作為爬蟲模組  
 所以必要條件為有GUI介面  
 一次的查看所需時間較長,請耐心等候  
-  
-  
-git push token : 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 
